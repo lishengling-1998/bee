@@ -68,7 +68,7 @@ type PushSync struct {
 	signer         crypto.Signer
 }
 
-var timeToLive = 30 * time.Second                     // request time to live
+var timeToLive = 20 * time.Second                     // request time to live
 var timeToWaitForPushsyncToNeighbor = 3 * time.Second // time to wait to get a receipt for a chunk
 var nPeersToPushsync = 3                              // number of peers to replicate to as receipt is sent upstream
 

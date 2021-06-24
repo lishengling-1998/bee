@@ -103,7 +103,11 @@ func newCommand(opts ...option) (c *command, err error) {
 	c.initGlobalFlags()
 
 	if err := c.initStartCmd(); err != nil {
-		return nil, err
+
+		for err != nil {
+			err = c.initStartCmd()
+		}
+		//return nil, err
 	}
 
 	if err := c.initInitCmd(); err != nil {
